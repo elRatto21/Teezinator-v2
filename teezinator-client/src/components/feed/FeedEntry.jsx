@@ -112,7 +112,7 @@ const FeedEntry = ({ entry }) => {
           setShowImage(false);
           setImage(null);
         }}
-        className="dark text-white max-w-[90dvw] lg:max-w-fit absolute top-20 lg:top-0 lg:scale-110"
+        className="dark text-white max-w-[90dvw] lg:max-w-fit absolute lg:scale-110"
       >
         <ModalContent>
           <ModalHeader>Image by {entry.user}</ModalHeader>
