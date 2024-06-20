@@ -3,9 +3,31 @@
 @tailwind utilities;
 
 :root {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
+
+.glow {
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8),
+    0 0 10px rgba(255, 255, 255, 0.3), 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+@keyframes glitter {
+    0%, 100% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+  }
+
+  .glitter {
+    background: linear-gradient(90deg, #ff6ec4, #7873f5, #7bdff2, #b2f7ef, #f7d6e0, #f2bac9, #ff9a9e);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glitter 1.5s infinite;
+  }

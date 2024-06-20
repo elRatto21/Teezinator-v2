@@ -12,6 +12,7 @@ import Stats from "./components/stats/Stats";
 import Profile from "./components/profile/Profile";
 import Settings from "./components/settings/Settings";
 import CreateVibesEntry from "./components/summervibes/CreateVibesEntry";
+import Register from "./components/auth/Register";
 
 function App() {
   const nav = useNavigate();
@@ -32,6 +33,7 @@ function App() {
       <main className="dark text-foreground bg-gray-950 min-h-screen w-screen">
         <Routes>
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
 
           <Route element={<ProtectedRoutes />}>
             <Route path="/" element={<Feed />} />
