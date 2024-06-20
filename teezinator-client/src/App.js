@@ -11,6 +11,7 @@ import Leaderboard from "./components/leaderboard/Leaderboard";
 import Stats from "./components/stats/Stats";
 import Profile from "./components/profile/Profile";
 import Settings from "./components/settings/Settings";
+import CreateVibesEntry from "./components/summervibes/CreateVibesEntry";
 
 function App() {
   const nav = useNavigate();
@@ -44,6 +45,8 @@ function App() {
             <Route path="/profile" element={<Profile />} />
 
             <Route path="/settings" element={<Settings />} />
+
+            <Route path="/vibes" element={<CreateVibesEntry />} />
           </Route>
         </Routes>
         <ToastContainer

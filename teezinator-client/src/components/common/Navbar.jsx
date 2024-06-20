@@ -105,6 +105,11 @@ const NavbarComp = () => {
           justify="center"
         >
           <NavbarMenuItem>
+            <Link className="w-full text-orange-300" href="/vibes" size="lg">
+              Summer Vibes
+            </Link>
+          </NavbarMenuItem>
+          <NavbarMenuItem>
             <Link className="w-full text-white" href="/" size="lg">
               Feed
             </Link>
@@ -163,6 +168,11 @@ const NavbarComp = () => {
         </NavbarContent>
 
         <NavbarMenu className="dark gap-6 pt-6 items-end">
+        <NavbarMenuItem>
+            <Link className="w-full text-orange-300" href="/" size="lg">
+              Summer Vibes
+            </Link>
+          </NavbarMenuItem>
           <NavbarMenuItem>
             <Link className="w-full text-white" href="/" size="lg">
               Feed
