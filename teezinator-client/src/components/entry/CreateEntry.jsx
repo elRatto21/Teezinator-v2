@@ -101,6 +101,7 @@ const CreateEntry = () => {
           .format(),
         image: image,
         imagePreview: imagePreview,
+        type: "REGULAR"
       });
       await axiosAuth.post("/tea", data).then(() => {
         toast.success("Successfully added tea!");
