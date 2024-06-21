@@ -67,45 +67,150 @@ const FeedEntry = ({ entry }) => {
 
   return (
     <>
-      <Card>
-        <CardHeader className="pb-0 pt-2.5 px-4 flex-col items-start">
-          <div className="flex items-center gap-2 mb-2.5">
-            <Avatar name={entry.user.charAt(0)} />
-            <div className="flex flex-col">
-              <p className="text-medium font-bold">{entry.user}</p>
-              <Tooltip
-                classNames={{
-                  base: "dark",
-                  content: "dark text-white",
-                }}
-                showArrow={true}
-                content={formatDateTime(entry.time)}
-                delay={750}
-              >
-                <small className="text-default-500">
-                  {calcTime(entry.time)}
-                </small>
-              </Tooltip>
+      {entry.type === "SUMMERVIBES" ? (
+        <Card className="card-glitter">
+          <CardHeader className="pb-0 pt-2.5 px-4 flex-col items-start">
+            <div className="flex items-center gap-2 mb-2.5">
+              <Avatar name={entry.user.charAt(0)} />
+              <div className="flex flex-col">
+                <p className="text-medium font-bold">{entry.user}</p>
+                <Tooltip
+                  classNames={{
+                    base: "dark",
+                    content: "dark text-white",
+                  }}
+                  showArrow={true}
+                  content={formatDateTime(entry.time)}
+                  delay={750}
+                >
+                  <small className="text-gray-200">
+                    {calcTime(entry.time)}
+                  </small>
+                </Tooltip>
+              </div>
             </div>
-          </div>
-          <h4 className="font-semibold">Drank {entry.tea.name}</h4>
-        </CardHeader>
-        {entry.preview ? (
-          <CardBody className="overflow-visible py-2">
-            <div className="h-[200px] overflow-hidden rounded-xl">
-              <Image
-                src={entry.preview}
-                alt="cover"
-                width={400}
-                className="object-cover rounded-none h-[200px] w-full hover:scale-110 cursor-pointer"
+            <h4 className="font-semibold">{entry.tea.name} @ Summer Vibes</h4>
+          </CardHeader>
+          {entry.preview ? (
+            <CardBody className="overflow-visible py-2">
+              <div className="h-[200px] overflow-hidden rounded-xl">
+                <Image
+                  src={entry.preview}
+                  alt="cover"
+                  width={400}
+                  className="object-cover rounded-none h-[200px] w-full hover:scale-110 cursor-pointer"
+                  onClick={handleOpenImage}
+                />
+              </div>
+            </CardBody>
+          ) : entry.image ? (
+            <CardBody>
+              <Button
                 onClick={handleOpenImage}
-              />
+                className="w-1/3"
+                variant="flat"
+              >
+                Show Image
+              </Button>
+            </CardBody>
+          ) : null}
+        </Card>
+      ) : entry.type === "POST" ? (
+        <Card className="bg-gray-800">
+          <CardHeader className="pb-0 pt-2.5 px-4 flex-col items-start">
+            <div className="flex items-center gap-2 mb-2.5">
+              <Avatar name={entry.user.charAt(0)} />
+              <div className="flex flex-col">
+                <p className="text-medium font-bold">{entry.user}</p>
+                <Tooltip
+                  classNames={{
+                    base: "dark",
+                    content: "dark text-white",
+                  }}
+                  showArrow={true}
+                  content={formatDateTime(entry.time)}
+                  delay={750}
+                >
+                  <small className="text-default-500">
+                    {calcTime(entry.time)}
+                  </small>
+                </Tooltip>
+              </div>
             </div>
-          </CardBody>
-        ) : (
-          <CardBody>{entry.image ? <Button onClick={handleOpenImage} className="w-1/3" variant="flat">Show Image</Button> : null}</CardBody>
-        )}
-      </Card>
+          </CardHeader>
+          {entry.preview ? (
+            <CardBody className="overflow-visible py-2">
+              <div className="h-[200px] overflow-hidden rounded-xl">
+                <Image
+                  src={entry.preview}
+                  alt="cover"
+                  width={400}
+                  className="object-cover rounded-none h-[200px] w-full hover:scale-110 cursor-pointer"
+                  onClick={handleOpenImage}
+                />
+              </div>
+            </CardBody>
+          ) : entry.image ? (
+            <CardBody>
+              <Button
+                onClick={handleOpenImage}
+                className="w-1/3"
+                variant="flat"
+              >
+                Show Image
+              </Button>
+            </CardBody>
+          ) : null}
+        </Card>
+      ) : (
+        <Card>
+          <CardHeader className="pb-0 pt-2.5 px-4 flex-col items-start">
+            <div className="flex items-center gap-2 mb-2.5">
+              <Avatar name={entry.user.charAt(0)} />
+              <div className="flex flex-col">
+                <p className="text-medium font-bold">{entry.user}</p>
+                <Tooltip
+                  classNames={{
+                    base: "dark",
+                    content: "dark text-white",
+                  }}
+                  showArrow={true}
+                  content={formatDateTime(entry.time)}
+                  delay={750}
+                >
+                  <small className="text-default-500">
+                    {calcTime(entry.time)}
+                  </small>
+                </Tooltip>
+              </div>
+            </div>
+            <h4 className="font-semibold">Drank {entry.tea.name}</h4>
+          </CardHeader>
+          {entry.preview ? (
+            <CardBody className="overflow-visible py-2">
+              <div className="h-[200px] overflow-hidden rounded-xl">
+                <Image
+                  src={entry.preview}
+                  alt="cover"
+                  width={400}
+                  className="object-cover rounded-none h-[200px] w-full hover:scale-110 cursor-pointer"
+                  onClick={handleOpenImage}
+                />
+              </div>
+            </CardBody>
+          ) : entry.image ? (
+            <CardBody>
+              <Button
+                onClick={handleOpenImage}
+                className="w-1/3"
+                variant="flat"
+              >
+                Show Image
+              </Button>
+            </CardBody>
+          ) : null}
+        </Card>
+      )}
       <Modal
         isOpen={showImage}
         onOpenChange={() => {
