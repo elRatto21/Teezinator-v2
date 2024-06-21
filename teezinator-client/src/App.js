@@ -52,17 +52,11 @@ function App() {
           </Route>
         </Routes>
         <ToastContainer
-          className="lg:hidden w-2/3 ml-auto mr-auto mt-2"
+          className="mt-2"
           autoClose={3000}
           pauseOnHover={false}
-          theme="colored"
-          closeOnClick
-        />
-        <ToastContainer
-          className="hidden lg:block"
-          autoClose={3000}
-          pauseOnHover={false}
-          theme="colored"
+          draggable={true}
+          theme="dark"
           closeOnClick
         />
       </main>
