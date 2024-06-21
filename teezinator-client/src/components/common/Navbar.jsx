@@ -169,7 +169,7 @@ const NavbarComp = () => {
 
         <NavbarMenu className="dark gap-6 pt-6 items-end">
         <NavbarMenuItem>
-            <Link className="w-full glow glitter text-orange-300" href="/vibes" size="lg">
+            <Link className="w-full glitter glow text-orange-300" href="/vibes" size="lg">
               Summer Vibes
             </Link>
           </NavbarMenuItem>
