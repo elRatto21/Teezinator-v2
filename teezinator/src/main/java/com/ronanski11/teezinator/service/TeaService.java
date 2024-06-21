@@ -46,6 +46,7 @@ public class TeaService {
 		consumedTea.setTea(teaRepository.findById(coDto.getTeaId()).get());
 		consumedTea.setUser(username);
 		consumedTea.setSugar(coDto.getSugar());
+		consumedTea.setType(coDto.getType());
 		if (coDto.getImage() != null) {
 			consumedTea.setImage(imageRepository.save(new Image(coDto.getImage())).getId());
 			consumedTea.setPreview(coDto.getImagePreview());
