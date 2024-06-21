@@ -114,6 +114,7 @@ const CreateVibesEntry = () => {
             .format(),
           image: image,
           imagePreview: imagePreview,
+          type: "POST"
         });
       } else {
         data = JSON.stringify({
@@ -124,6 +125,7 @@ const CreateVibesEntry = () => {
             .format(),
           image: image,
           imagePreview: imagePreview,
+          type: "SUMMERVIBES"
         });
       }
       await axiosAuth.post("/tea", data).then(() => {
